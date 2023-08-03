@@ -30,7 +30,7 @@ public class HigherLowerGame {
         numberOfGames++; // every time this run +1 is added to the number of games until the player has guessed the number right//
         if (randomNumberCasino == guess) {
             gameIsRunning = false;
-            System.out.println("Great news! You have guessed right!" + "You needed " + numberOfGames + " rounds to guess the right number." + "Well done!");
+            System.out.println("Great news! You have guessed right!" + "You needed " + numberOfGames + " rounds to guess the right number." + "Well done! If you want, you can play again!");
         } else if (guess < randomNumberCasino) {
             System.out.println("Snap! Your number is lower than expected!");
         } else {
