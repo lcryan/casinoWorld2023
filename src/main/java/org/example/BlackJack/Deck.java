@@ -23,11 +23,10 @@ public class Deck {
     }
 
     public Card getNextCard() {
-        return cards.pop(); // the pop method
+        return cards.pop(); // the pop method pon cards removes and returns the top element from the stack //
     }
 
     public boolean isEmpty() {
-
-        return cards.isEmpty(); //calling the method within cards; //
+        return cards.isEmpty(); // will be true / false depending on each case //
     }
 }
