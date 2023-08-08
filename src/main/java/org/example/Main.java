@@ -10,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
-        HigherLowerGame game = new HigherLowerGame(inputScanner);
+       /* HigherLowerGame game = new HigherLowerGame(inputScanner);*/
         BlackJackGame blackJack = new BlackJackGame(inputScanner);
-        game.playGame();
+     /*   game.playGame();*/
         blackJack.playJackGame();
     }
 }
