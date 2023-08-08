@@ -25,5 +25,7 @@ public class Hand {
         }
         return sb.toString();
     }
-
+// this is the textual representation of all cards in the deck :  1. the StringBuilder is used to efficiently construct a string by appending smaller pieces to it
+    // 2. we loop through all the cards in the deck - for each card object we call the render method - this generates a string representation of the card. We then append this string representation followed by a new line character ('\n') to the StringBuilder
+    //3. sb.toString(); we return the final concatenated String representation of all cards in the deck! //
 }
