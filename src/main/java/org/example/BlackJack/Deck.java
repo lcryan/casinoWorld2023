@@ -1,21 +1,26 @@
 package org.example.BlackJack;
 
+import java.util.Stack;
+
 public class Deck {
 
-    private String card; // not quite sure, if this is the correct par of Card
+    protected Stack<Card> cards;
 
-    boolean isEmpty;
 
-    public Deck(String card, boolean isEmpty) {
-        this.card = card;
-        this.isEmpty = isEmpty;
+    public Deck() {
+
     }
 
     public void shuffle() {
 
     }
 
-    public void getNextCard() {
-        // not quite sure about this, as the card has to be push through this method.. getNextCard: Card//
+    public Card getNextCard() {
+        return null;
+    }
+
+    public boolean isEmpty() {
+
+        return cards.isEmpty(); //calling the method within cards; //
     }
 }
