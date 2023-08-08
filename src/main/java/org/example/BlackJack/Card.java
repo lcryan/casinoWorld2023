@@ -9,12 +9,11 @@ public class Card {
         this.value = value;
     }
 
-    public String render () {
-
-        return null; //TODO: still has to be filled with a real return statement //
+    public String render() {
+        return suit.getSymbol() + " " + value.getValue();
     }
 
-    public int getValue() {
-        return value.getValue();
+    public CardValue getValue() {
+        return value;
     }
 }

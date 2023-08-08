@@ -1,32 +1,42 @@
 package org.example.BlackJack;
 
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 public class Deck {
-
-    protected Stack<Card> cards;
-
+    private Stack<Card> cards = new Stack<>();
 
     public Deck() {
-//TODO : do I have to add something here ?!? TBD. //
-    }
+        int[] numbers = new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
+        String[] names = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"};
+        CardSuit[] suits = new CardSuit[]{
+                new CardSuit("diamonds", '\u2666', "red"),
+                new CardSuit("spades", '\u2660', "black"),
+                new CardSuit("hearts", '\u2665', "red"),
+                new CardSuit("clubs", '\u2663', "black")
+        };
+        ArrayList<CardValue> values = new ArrayList<>(); // we store the Card Value objects here - Card Value represents the name and numeric value of each card - see Card Value class //
 
-    public void shuffle() {
-        Random setOfCards = new Random(); // creating a new instance of the Random class - which is used to generate random numbers - here a random set of cards 0 - each time nextInt is being called - it returns a random integer. //
-        for (int i = 0; i < setOfCards.nextInt(); i++) { // for-loop : iterating through the cards and shuffling them  // // an idea would be to maybe iterate a certain amount of times ??? //
-            int shuffledCards = setOfCards.nextInt(cards.size()); // this line generates a random index within the range of the current number of cards in the deck (here: cards.size()). This index will be used to select a random card to swap with the card at the current index ('i') during shuffling //
-            Card hold = cards.get(i); //this line temporarily stores the card at the current index (i) in a variable named "hold". This is done  to make the swapping process possible;
-            cards.set(i, cards.get(shuffledCards)); // this line swaps the card at index 'i' with the card at index 'shuffledCards'; ergo:  It moves a randomly selected card to the current position in the iteration//
-            cards.set(shuffledCards, hold); // this line then places the card that was originally at index 'i' (stored in the 'hold' variable) into the position of the randomly selected card index (index "shuffledCards"). This completes the swapping process. //
+        for (int i = 0; i < numbers.length; i++) {
+            values.add(new CardValue(names[i], numbers[i])); // the loop iterates through the numbers array from above and creates CardValue objects for each value-name pair. These objects are added to the 'values' ArrayList - see above!!!
+        }
+        for (CardSuit suit : suits) {
+            for (CardValue value : values) {
+                Card card = new Card(suit, value);
+                cards.add(card);
+            } // these nested loops iterate through each 'CardSuit' and each 'CardValue' creating 'Card' objects by combining the suit and the value! The 'Card' objects are then added to the 'cards stack' see above! - which then effectively creates a full deck of cards! "
         }
     }
 
+    public void shuffle() {
+        Collections.shuffle(cards); // the shuffle method is a part of the Java standard library - here it shuffles the elements in the 'cards' collection - the deck of cards effectively. the card stack will be shuffled randomly when this method is called - changing the order of the cards.//
+    }
+
+
     public Card getNextCard() {
-        return cards.pop(); // the pop method pon cards removes and returns the top element from the stack //
+        return cards.pop();
     }
 
     public boolean isEmpty() {
-        return cards.isEmpty(); // will be true / false depending on each case // //testing if pushing works out
+        return true; // maybe has to be called only on cards here ?
     }
 }

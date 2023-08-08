@@ -1,9 +1,19 @@
 package org.example.BlackJack;
 
 public class CardValue {
+    private String name;
     private int value;
-    public int getValue() {
 
+    public CardValue(String name, int value) {
+        this.name = name;
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getValue() {
         return value;
     }
 }
