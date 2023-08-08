@@ -27,6 +27,6 @@ public class Deck {
     }
 
     public boolean isEmpty() {
-        return cards.isEmpty(); // will be true / false depending on each case //
+        return cards.isEmpty(); // will be true / false depending on each case // //testing if pushing works out
     }
 }
