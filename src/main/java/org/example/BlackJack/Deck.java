@@ -1,7 +1,6 @@
 package org.example.BlackJack;
 
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 public class Deck {
 
@@ -17,13 +16,21 @@ public class Deck {
                 new CardSuit("hearts", '\u2665', "red"),
                 new CardSuit("clubs", '\u2663', "black")
         };
+        ArrayList<CardValue> values = new ArrayList<>();
 
+        for (int i = 0; i < numbers.length; i++) {
+            values.add(new CardValue(names[i], numbers[i]));
+        }
+        for (CardSuit suit : suits) {
+            for (CardValue value : values) {
+                Card card = new Card(suit, value);
+                cards.add(card);
+            }
+        }
     }
 
-    ;
-
-
     public void shuffle() {
+        Collections.shuffle(cards); // this is a method within Java ? //
     }
 
 
