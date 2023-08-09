@@ -26,7 +26,7 @@ public class Player {
     }
 
     public boolean isStaying() {
-        return isStaying = true;
+        return isStaying;
     }
 
     public boolean isBust() {
