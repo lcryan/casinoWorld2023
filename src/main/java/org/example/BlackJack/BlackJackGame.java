@@ -13,8 +13,8 @@ public class BlackJackGame {
         this.inputScanner = inputScanner;
         this.deck = new Deck();
         gameIsRunning = true;
-        player = new Player();
-        dealer = new Dealer();
+        player = new Player(); //making a new player instance - no cards have been added yet - hand empty//
+        dealer = new Dealer(); // making a new dealer instance - no cards have been added yet - empty hand//
         this.deck.shuffle();
         Card[] cardsForPlayers = new Card[]{deck.getNextCard(), deck.getNextCard()}; // step 1. player gets 2 cards //
         player.addCardsToHand(cardsForPlayers); //adding actual cards to players hand //
@@ -23,16 +23,16 @@ public class BlackJackGame {
     }
 
     public void renderAllHands() {
-        System.out.println("These are your cards!");
-        System.out.println(player.renderHand());
-        System.out.println("These are the dealer's cards!");
-        System.out.println(dealer.renderHand());
+        System.out.println("Hey player! These are YOUR cards!"); // message to player //
+        System.out.println(player.renderHand()); // here making card values into a string - referring to method in player class //
+        System.out.println("These are the dealer's cards!"); // message to player about the dealer's cards //
+        System.out.println(dealer.renderHand()); // making card values into a  string - referring to method in player class //
     }
 
 
     public void playJackGame() {
-        gameIsRunning = true;
-        System.out.println("Welcome to a new game of Black Jack.");
+        gameIsRunning = true; // the game is afoot //
+        System.out.println("Welcome to a new game of Black Jack."); // start message of game for player //
 
     }
 }
