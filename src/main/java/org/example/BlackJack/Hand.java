@@ -18,7 +18,7 @@ public class Hand {
     }
 
     public String render() {
-        StringBuilder sb = new StringBuilder(); // how were we supposed to know this ??? //
+        StringBuilder sb = new StringBuilder(); // included in the standard Java library - note to self: remember this as a more straight forward way to build strings out of ints //
         for (Card card : cards) {
             sb.append(card.render());
             sb.append("\n");
