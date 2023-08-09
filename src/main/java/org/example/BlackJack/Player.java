@@ -3,11 +3,11 @@ package org.example.BlackJack;
 public class Player {
     public Hand hand;
     private boolean isStaying = false;
-    ]g// first set isStaying false to be able to move to true if player decides to NOT add any more cards //
+    // first set isStaying false to be able to move to true if player decides to NOT add any more cards //
 
     public Player() {
         this.hand = new Hand();
-    }
+    } //instantiating new Object - here the hand of cards //
 
     public void performMove(Deck deck, String move) {
         if (move.equals("hit me")) {
