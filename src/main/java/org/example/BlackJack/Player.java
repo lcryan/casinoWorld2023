@@ -2,7 +2,8 @@ package org.example.BlackJack;
 
 public class Player {
     public Hand hand;
-    private boolean isStaying = false; // first set isStaying false to be able to move to true if player decides to NOT add any more cards //
+    private boolean isStaying = false;
+    ]g// first set isStaying false to be able to move to true if player decides to NOT add any more cards //
 
     public Player() {
         this.hand = new Hand();
