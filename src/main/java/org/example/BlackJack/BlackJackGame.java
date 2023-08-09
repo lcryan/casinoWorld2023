@@ -35,6 +35,36 @@ public class BlackJackGame {
         System.out.println("Welcome to a new game of Black Jack."); // start message of game for player //
         while (gameIsRunning) {
             renderAllHands(); //referring to method above//
+            if (!player.isStaying() && !dealer.isStaying()) {
+                System.out.println("Hello player! Do you want to HIT or STAY ?");
+                String hitOrStay = inputScanner.nextLine();
+                if (hitOrStay.equals("hit") || hitOrStay.equals("stay")) {
+                    player.performMove(deck, hitOrStay); //performMove from player method //
+
+                    if (player.isBust()) {
+                        System.out.println("Oh no! You have lost!");
+                        System.out.println("Your total points were " + player.getHandValue() + "." + " Try again!");
+                        gameIsRunning = false;
+                    }
+                    dealer.performMove(deck, hitOrStay);
+                    if (dealer.isBust()) {
+                        System.out.println("You have won!");
+                        System.out.println("The dealer's cards worth is " + dealer.getHandValue() + ".");
+                        renderAllHands();
+                    } else {
+                        System.out.println("Sorry, but you seem to have chosen an invalid option.");
+                    }
+                } else {
+                    if (player.getHandValue() <= dealer.getHandValue()) {
+                        System.out.println("Boohoo! You have lost!");
+                    }
+                    if (dealer.getHandValue() < player.getHandValue()) {
+                        System.out.println("You have won!!!");
+                        renderAllHands();
+                    }
+                    gameIsRunning = false;
+                }
+            }
         }
     }
 }
