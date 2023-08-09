@@ -5,8 +5,6 @@ public class CardSuit {
     private char symbol;
     private String color;
 
-
-
     public CardSuit(String name, char symbol, String color) {
         this.name = name;
         this.symbol = symbol;
