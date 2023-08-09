@@ -33,6 +33,8 @@ public class BlackJackGame {
     public void playJackGame() {
         gameIsRunning = true; // the game is afoot //
         System.out.println("Welcome to a new game of Black Jack."); // start message of game for player //
+        while (gameIsRunning) {
 
+        }
     }
 }
