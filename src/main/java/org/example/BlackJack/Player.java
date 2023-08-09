@@ -11,7 +11,7 @@ public class Player {
     public void performMove(Deck deck, String move) {
         if (move.equals("hit me")) {
             Card card = deck.getNextCard();
-            Card[] cardForPlayer = new Card[]{card};
+            Card[] cardForPlayer = new Card[]{card}; // card from suit ?//
             this.addCardsToHand(cardForPlayer); // referring to method one below!! //
             System.out.println("You were hit with: " + card.render());
         } else {
@@ -21,12 +21,12 @@ public class Player {
 
     public void addCardsToHand(Card[] cards) {
         for (Card card : cards) {
-            hand.addCard(card);
+            hand.addCard(card); //referring to addCard method in Hand class //
         }
     }
 
     public boolean isStaying() {
-        return isStaying(); // who do we have to call on here ? Usually it is supposed to be the player / dealer//
+        return isStaying = true;
     }
 
     public boolean isBust() {
