@@ -5,6 +5,7 @@ import java.util.*;
 public class Deck {
     private Stack<Card> cards = new Stack<>();
 
+
     public Deck() {
         int[] numbers = new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
         String[] names = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"};
@@ -34,9 +35,9 @@ public class Deck {
 
     public Card getNextCard() {
         return cards.pop();
-    }
+    } //using pop-method to get the next card from the top //
 
     public boolean isEmpty() {
-        return true; // maybe has to be called only on cards here ?
+        return true;
     }
 }
