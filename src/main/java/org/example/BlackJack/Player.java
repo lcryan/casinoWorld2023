@@ -2,26 +2,35 @@ package org.example.BlackJack;
 
 public class Player {
     public Hand hand;
-    private boolean staying;
+    private boolean isStaying = false; // first set isStaying false to be able to move to true if player decides to NOT add any more cards //
 
     public Player() {
         this.hand = new Hand();
     }
 
     public void performMove(Deck deck, String move) {
-
+        if (move.equals("hit me")) {
+            Card card = deck.getNextCard();
+            Card[] cardForPlayer = new Card[]{card};
+            this.addCardsToHand(cardForPlayer); // referring to method one below!! //
+            System.out.println("You were hit with: " + card.render());
+        } else {
+            isStaying = true;
+        }
     }
 
     public void addCardsToHand(Card[] cards) {
-
+        for (Card card : cards) {
+            hand.addCard(card);
+        }
     }
 
     public boolean isStaying() {
-        return staying; // who do we have to call on here ? Usually it is supposed to be the player / dealer//
+        return isStaying(); // who do we have to call on here ? Usually it is supposed to be the player / dealer//
     }
 
     public boolean isBust() {
-        return isBust(); // can we work with an if else statement here -- does do we have to add this to the main method??? //
+        return hand.getTotalValue() > 21; // is this a shortened version of an if/ else statement ?//
     }
 
     public int getHandValue() {
@@ -29,7 +38,7 @@ public class Player {
     }
 
     public String renderHand() {
-        return hand.render(); // rendering worth of hand into a string //
+        return hand.render(); // rendering worth of hand into a string - referring to method in deck class //
     }
 
 }
