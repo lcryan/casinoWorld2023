@@ -10,9 +10,8 @@ public class Dealer {
     }
 
     public void performMove(Deck deck, String move) {
-        if (move.equals("hit the dealer")) {
-            Card card = deck.getNextCard(); // get new card to dealer //
-            Card[] cardForDealer = new Card[]{card}; // adding card to the suit of dealer //
+        if (hand.getTotalValue() < 17) {
+            Card[] cardForDealer = new Card[]{deck.getNextCard()}; // adding card to the suit of dealer //
             this.addCardsToHand(cardForDealer);
         } else {
             isStaying = true;
@@ -35,11 +34,11 @@ public class Dealer {
     }
 
     public int getHandValue() {
-        return getHandValue();//TODO: still has to be amended here!!! //
+        return hand.getTotalValue();
     }
 
     public String renderHand() {
-        return renderHand(); // TODO : return still has to be amended here;
+        return hand.render(); // TODO : return still has to be amended here;
     }
 
 }
