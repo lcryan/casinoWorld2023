@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Hand {
     ArrayList<Card> cards;
 
+    public Hand() {
+        cards = new ArrayList<>();
+    }
+
     public void addCard(Card card) {
         cards.add(card); // this adds a card to each hand of either player or dealer //
     }
@@ -18,7 +22,7 @@ public class Hand {
     }
 
     public String render() {
-        StringBuilder sb = new StringBuilder(); // how were we supposed to know this ??? //
+        StringBuilder sb = new StringBuilder(); // included in the standard Java library - note to self: remember this as a more straight forward way to build strings out of ints //
         for (Card card : cards) {
             sb.append(card.render());
             sb.append("\n");
