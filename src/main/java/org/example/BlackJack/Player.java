@@ -17,20 +17,19 @@ public class Player {
     }
 
     public boolean isStaying() {
-
         return staying; // who do we have to call on here ? Usually it is supposed to be the player / dealer//
     }
 
     public boolean isBust() {
-        return isBust(); // can we work with an if else statement here ?? //
+        return isBust(); // can we work with an if else statement here -- does do we have to add this to the main method??? //
     }
 
     public int getHandValue() {
-        return getHandValue();//TODO: still has to be amended here!!! //
+        return hand.getTotalValue();//getting total value of hand - referring to method in deck //
     }
 
     public String renderHand() {
-        return renderHand(); // TODO : return still has to be amended here;
+        return hand.render(); // rendering worth of hand into a string //
     }
 
 }
